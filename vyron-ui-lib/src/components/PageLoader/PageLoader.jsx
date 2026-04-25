@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export const PageLoader = ({
-  logo = "VyronAI",
+  logo = "VyronUI",
   accent = "#6366f1",
   bg = "",
   type = "spinner",

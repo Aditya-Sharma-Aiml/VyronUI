@@ -15,6 +15,6 @@ componentRouter.post("/save", isAuth, saveComponent);
 // publish component (admin only check controller में already है)
 componentRouter.post("/publish", isAuth, isAdmin, publishComponent);
 
-componentRouter.get("/all-components" , isAuth , getAllComponents)
+componentRouter.get("/all-components" , getAllComponents)
 
 export default componentRouter;

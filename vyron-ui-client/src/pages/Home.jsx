@@ -15,7 +15,7 @@ import {
   TbLogout,
   TbComponents,
 } from "react-icons/tb";
-import { SiValorant } from "react-icons/si";
+import {} from "react-icons/si";
 import Auth from "../components/Auth";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -167,13 +167,13 @@ export default function Home() {
       <nav className="sticky top-0 z-40 flex items-center justify-between px-4 sm:px-8 lg:px-10 py-4 border-b border-white/[0.05] bg-[#030b0d]/85 backdrop-blur-md">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#3be8ff] to-[#0ab5d4] flex items-center justify-center shadow-[0_0_14px_rgba(59,232,255,0.4)]">
-            <SiValorant size={15} color="#051c20" />
+            <span style={{ color: '#051c20', fontSize: '16px', fontWeight: '900', lineHeight: 1, fontFamily: "'Syne', sans-serif" }}>V</span>
           </div>
           <span
             className="text-lg font-bold tracking-tight"
             style={{ fontFamily: "'Syne',sans-serif" }}
           >
-            VyronAI
+            VyronUI
           </span>
         </div>
 
@@ -621,9 +621,9 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
           <div className="flex items-center gap-2.5">
             <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#3be8ff] to-[#0ab5d4] flex items-center justify-center">
-              <SiValorant size={11} color="#051c20" />
+              <span style={{ color: '#051c20', fontSize: '12px', fontWeight: '900', lineHeight: 1, fontFamily: "'Syne', sans-serif" }}>V</span>
             </div>
-            <span className="text-sm font-semibold text-white/60">VyronAI</span>
+            <span className="text-sm font-semibold text-white/60">VyronUI</span>
           </div>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-5 text-xs text-white/30">
             <a
@@ -634,11 +634,11 @@ export default function Home() {
             </a>
 
             <a className="hover:text-white/60 transition-colors">
-              admin@vyronai.com
+              admin@vyronui.com
             </a>
           </div>
           <p className="text-xs text-white/25 order-last sm:order-none">
-            © {new Date().getFullYear()} VyronAI. All rights reserved.
+            © {new Date().getFullYear()} VyronUI. All rights reserved.
           </p>
         </div>
       </footer>

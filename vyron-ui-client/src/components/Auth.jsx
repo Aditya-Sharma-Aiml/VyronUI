@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FcGoogle } from "react-icons/fc";
 import { HiSparkles } from "react-icons/hi2";
 import { TbCopy, TbSettings, TbDownload, TbLogin2, TbX } from "react-icons/tb";
-import { SiValorant } from "react-icons/si";
+import {} from "react-icons/si";
 import { auth, provider } from "../utils/firebase";
 import { signInWithPopup } from "firebase/auth";
 import axios from "axios"
@@ -91,9 +91,9 @@ function Auth({ onClose }) {
             className="flex items-center gap-3 mb-7 sm:mb-9"
           >
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#3be8ff] to-[#0ab5d4] flex items-center justify-center shadow-[0_0_18px_rgba(59,232,255,0.35)]">
-              <SiValorant size={17} color="#051c20" />
+              <span style={{ color: '#051c20', fontSize: '18px', fontWeight: '900', lineHeight: 1, fontFamily: "'Syne', sans-serif" }}>V</span>
             </div>
-            <span className="text-xl font-bold text-[#e8f8fa] tracking-tight" style={{ fontFamily:"'Syne',sans-serif" }}>VyronAI</span>
+            <span className="text-xl font-bold text-[#e8f8fa] tracking-tight" style={{ fontFamily:"'Syne',sans-serif" }}>VyronUI</span>
           </motion.div>
 
           <p className="text-[10px] font-semibold tracking-[3px] text-[#3be8ff] uppercase mb-4 sm:mb-5">How it works</p>
@@ -132,7 +132,7 @@ function Auth({ onClose }) {
               animate={{ y: [0, -6, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mx-auto mb-5 sm:mb-6 bg-gradient-to-br from-[#3be8ff]/15 to-[#040f12] border border-[#3be8ff]/20 flex items-center justify-center"
             >
-              <SiValorant size={22} color="#3be8ff" />
+              <span style={{ color: '#3be8ff', fontSize: '24px', fontWeight: '900', lineHeight: 1, fontFamily: "'Syne', sans-serif" }}>V</span>
             </motion.div>
 
             <h3 className="text-xl font-bold text-[#e4f6f8] tracking-tight mb-2" style={{ fontFamily:"'Syne',sans-serif" }}>

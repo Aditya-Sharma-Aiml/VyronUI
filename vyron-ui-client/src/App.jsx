@@ -44,6 +44,22 @@ function App() {
 
   // ✅ Fetch extra data ONLY if admin/user exists
   useEffect(() => {
+    const fetchComponents = async () => {
+      try {
+        const componentsRes = await axios.get(`${ServerUrl}/api/component/all-components`, {
+          withCredentials: true
+        });
+        dispatch(setAllComponents(componentsRes.data));
+      } catch (error) {
+        console.error("Fetch Components Error:", error);
+      }
+    };
+
+    fetchComponents();
+  }, [dispatch]);
+
+  // ✅ Fetch extra data ONLY if admin/user exists
+  useEffect(() => {
     if (!userData) return;
 
     const fetchExtraData = async () => {
@@ -54,12 +70,6 @@ function App() {
           });
           dispatch(setAllUsers(usersRes.data));
         }
-
-        const componentsRes = await axios.get(`${ServerUrl}/api/component/all-components`, {
-          withCredentials: true
-        });
-        dispatch(setAllComponents(componentsRes.data));
-
       } catch (error) {
         console.error("Extra API Error:", error);
       }

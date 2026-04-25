@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export const Navbar = ({
-  logo = "VyronAI",
+  logo = "VyronUI",
   links = ["Home", "Features", "Pricing", "Blog"],
   ctaText = "Get Started",
   accent = "#6366f1",

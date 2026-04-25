@@ -6,7 +6,7 @@ import {
   TbEye, TbCodeDots, TbLoader, TbMenu2, TbChevronLeft,
   TbWorld, TbSearch, TbBoxOff,
 } from "react-icons/tb";
-import { SiValorant } from "react-icons/si";
+import {} from "react-icons/si";
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid,
   Tooltip, ResponsiveContainer,
@@ -461,10 +461,10 @@ export default function AdminDashboard() {
       {/* Logo */}
       <div className="flex items-center gap-2.5 px-5 py-5 border-b border-white/[0.05]">
         <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#3be8ff] to-[#0ab5d4] flex items-center justify-center shadow-[0_0_14px_rgba(59,232,255,0.4)] flex-shrink-0">
-          <SiValorant size={15} color="#051c20" />
+          <span style={{ color: '#051c20', fontSize: '16px', fontWeight: '900', lineHeight: 1, fontFamily: "'Syne', sans-serif" }}>V</span>
         </div>
         <div>
-          <span className="text-base font-bold block">VyronAI</span>
+          <span className="text-base font-bold block">VyronUI</span>
           <span className="text-[10px] text-[#3be8ff]/60 font-semibold tracking-[2px] uppercase">Admin</span>
         </div>
         {/* Close button – mobile only */}

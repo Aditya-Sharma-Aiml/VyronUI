@@ -13,6 +13,7 @@ export default function LiveComponentPreview({ code }) {
   // ─── Sanitize Code ─────────────────────────────────────
   let sanitized = code
     .replace(/import\s+.*?from\s+["'].*?["'];?/g, "")
+    .replace(/export\s+default\s+/g, "")
     .replace(/export\s+/g, "");
 
   sanitized = sanitized

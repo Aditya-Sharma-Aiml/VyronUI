@@ -6,7 +6,7 @@ import {
   TbLayoutSidebarLeftExpand, TbX, TbMenu2
 } from "react-icons/tb";
 import { HiSparkles } from "react-icons/hi2";
-import { SiValorant } from "react-icons/si";
+import {} from "react-icons/si";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LiveComponentPreview from "../components/LiveComponentPreview";
@@ -51,7 +51,7 @@ function CodeBlock({ code, lang = "jsx" }) {
 
 // ── Empty / Guide state ──
 function GuidePanel() {
-  const {userData} = useSelector((state)=>state.user)
+  const { userData } = useSelector((state) => state.user);
   return (
     <div className="flex flex-col items-center justify-center h-full px-6 sm:px-8 text-center py-10 sm:py-16">
       <motion.div
@@ -64,26 +64,15 @@ function GuidePanel() {
           <TbPackage size={24} className="text-[#3be8ff]/60" />
         </div>
 
-       {userData ? (
-  <>
-    <h2 className="text-base sm:text-lg font-bold mb-2 text-white/80">
-      Select a component
-    </h2>
-    <p className="text-white/35 text-xs sm:text-sm mb-8 sm:mb-10 max-w-sm mx-auto leading-relaxed">
-      Click any component from the sidebar to see its preview, code, and usage guide.
-    </p>
-  </>
-) : (
-  <>
-    
-    <h2 className="text-base sm:text-lg font-bold mb-2 text-white/80">
-      Sign in to explore components
-    </h2>
-    <p className="text-white/35 text-xs sm:text-sm mb-8 sm:mb-10 max-w-sm mx-auto leading-relaxed">
-      Sign in first to browse prebuilt components, live previews, and usage guides.
-    </p>
-  </>
-)}
+        <h2 className="text-base sm:text-lg font-bold mb-2 text-white/80">
+          Select a component
+        </h2>
+        <p className="text-white/35 text-xs sm:text-sm mb-8 sm:mb-10 max-w-sm mx-auto leading-relaxed">
+          Click any component from the sidebar to see its preview, code, and usage guide.
+          {!userData && (
+            <span className="block mt-2 text-[#3be8ff]/50 font-medium">Sign in to save and customize your own!</span>
+          )}
+        </p>
 
         <div className="w-full max-w-md mx-auto text-left space-y-4 mb-8">
           <p className="text-[10px] font-bold tracking-[3px] uppercase text-[#3be8ff]/50 mb-4">
@@ -368,13 +357,13 @@ export default function ComponentsPage() {
           className="flex items-center gap-2 sm:gap-2.5 bg-transparent border-none cursor-pointer"
         >
           <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-br from-[#3be8ff] to-[#0ab5d4] flex items-center justify-center shadow-[0_0_14px_rgba(59,232,255,0.35)]">
-            <SiValorant size={13} color="#051c20" />
+            <span style={{ color: '#051c20', fontSize: '14px', fontWeight: '900', lineHeight: 1, fontFamily: "'Syne', sans-serif" }}>V</span>
           </div>
           <span
             className="text-sm sm:text-base font-bold text-white"
             style={{ fontFamily: "'Syne',sans-serif" }}
           >
-            VyronAI
+            VyronUI
           </span>
         </button>
 

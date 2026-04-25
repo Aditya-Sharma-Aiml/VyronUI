@@ -1,9 +1,9 @@
 import React from "react";
 
 export const Footer = ({
-  logo = "VyronAI",
+  logo = "VyronUI",
   links = ["Home", "Features", "Pricing", "Blog", "Contact"],
-  copyright = "VyronAI",
+  copyright = "VyronUI",
   accent = "#6366f1",
   bg = "#0f172a",
 }) => {

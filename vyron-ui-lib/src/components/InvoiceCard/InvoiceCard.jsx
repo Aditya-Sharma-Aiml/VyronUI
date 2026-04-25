@@ -5,8 +5,8 @@ export const InvoiceCard = ({
   date = "21 March 2024",
   dueDate = "31 March 2024",
   from = {
-    name: "VyronAI Inc.",
-    email: "billing@vyronai.com",
+    name: "VyronUI Inc.",
+    email: "billing@vyronui.com",
     address: "123 Tech Street, San Francisco, CA",
   },
   to = {

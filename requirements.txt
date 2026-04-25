@@ -1,12 +1,12 @@
 
 ================================================================================
-                        VYRONAI — PROJECT REQUIREMENTS
+                        VYRONUI — PROJECT REQUIREMENTS
                Full-Stack AI-Powered React UI Component Platform
 ================================================================================
 
 PROJECT OVERVIEW
 ----------------
-VyronAI is a full-stack SaaS web platform that lets users:
+VyronUI is a full-stack SaaS web platform that lets users:
   1. Browse and use a prebuilt React UI component library (vyron-ui-library on npm)
   2. Generate custom React UI components using AI (DeepSeek via OpenRouter)
   3. Preview, customize, and save those components

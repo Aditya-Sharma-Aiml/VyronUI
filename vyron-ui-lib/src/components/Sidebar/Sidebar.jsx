@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export const Sidebar = ({
-  logo = "VyronAI",
+  logo = "VyronUI",
   accent = "#6366f1",
   bg = "#0f172a",
   items = [

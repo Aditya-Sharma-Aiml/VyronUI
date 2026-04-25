@@ -52,4 +52,14 @@ export { Button } from "./components/Button/Button.jsx";
 
 export { AnimatedButton } from "./components/AnimatedButton/AnimatedButton.jsx";
 
-export { default as ProductCard } from "./components/product/product.jsx";
+export { ProductCard } from "./components/ProductCard/Product.jsx";
+
+export { FinanceCard } from "./components/FinanceCard/FinanceCard.jsx";
+
+export { Dashboard } from "./components/Dashboard/Dashboard.jsx";
+
+export { LoginPage } from "./components/LoginPage/LoginPage.jsx";
+
+export { Dropdown } from "./components/Dropdown/Dropdown.jsx";
+
+export { DateFilter } from "./components/DateFilter/DateFilter.jsx";

@@ -1,19 +1,19 @@
 import React from "react";
 
-const ProductCard = ({ product, onAddToCart }) => {
+export const ProductCard = ({ product, onAddToCart }) => {
   return (
     <div style={styles.card}>
-      <img src={product.image} alt={product.title} style={styles.image} />
+      <img src={product?.image} alt={product?.title} style={styles.image} />
 
       <div style={styles.content}>
-        <h3 style={styles.title}>{product.title}</h3>
-        <p style={styles.description}>{product.description}</p>
+        <h3 style={styles.title}>{product?.title}</h3>
+        <p style={styles.description}>{product?.description}</p>
 
         <div style={styles.footer}>
-          <span style={styles.price}>₹{product.price}</span>
+          <span style={styles.price}>₹{product?.price}</span>
           <button
             style={styles.button}
-            onClick={() => onAddToCart(product)}
+            onClick={() => onAddToCart && onAddToCart(product)}
           >
             Add to Cart
           </button>
@@ -22,8 +22,6 @@ const ProductCard = ({ product, onAddToCart }) => {
     </div>
   );
 };
-
-export default ProductCard;
 
 const styles = {
   card: {

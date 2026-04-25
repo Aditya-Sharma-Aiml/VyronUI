@@ -1,7 +1,7 @@
 <div align="center">
 
-# 🚀 VyronAI: Full-Stack AI-Powered React UI Component Platform
-**Generate, Preview, Customise, and Publish React UI Components with the Power of DeepSeek V3.**
+# 🚀 VyronUI: Full-Stack AI-Powered React UI Component Platform
+**Generate, Preview, Customize, and Publish React UI Components with the Power of GPT-4o Mini.**
 
 [![React](https://img.shields.io/badge/React-19.2.0-blue.svg?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-7.3.1-646CFF.svg?style=for-the-badge&logo=vite)](https://vitejs.dev/)
@@ -19,9 +19,9 @@
 
 ## 💡 About The Project
 
-VyronAI is a comprehensive, full-stack SaaS platform designed to revolutionise how developers build UI. It combines a robust pre-built React component library (`vyron-ui-library-ai` on npm) with a powerful AI generator powered by DeepSeek V3 via OpenRouter. 
+VyronUI is a comprehensive, full-stack SaaS platform designed to revolutionize how developers build UI. It combines a robust pre-built React component library (`vyron-ui-library-ai` on npm) with a powerful AI generator powered by GPT-4o Mini via OpenRouter. 
 
-Users can effortlessly describe their desired UI in plain English, and VyronAI instantly generates production-ready, interactive JSX components. These components can be previewed live, customised, saved, and seamlessly integrated into any React project.
+Users can effortlessly describe their desired UI in plain English, and VyronUI instantly generates production-ready, interactive JSX components. These components can be previewed live, customized, saved, and seamlessly integrated into any React project.
 
 ### 📸 Preview / Screenshots
 
@@ -35,9 +35,9 @@ Users can effortlessly describe their desired UI in plain English, and VyronAI i
 
 ## ✨ Core Features
 
-- 🤖 **AI-Powered Generation:** Turn plain English prompts into functional React JSX components using DeepSeek V3.
+- 🤖 **AI-Powered Generation:** Turn plain English prompts into functional React JSX components using GPT-4o Mini.
 - ⚡ **Live Interactive Preview:** Real-time sandboxed execution and preview using `react-live` and `@codesandbox/sandpack-react`.
-- 🎨 **Rich Component Library:** Browse and use 25+ prebuilt, highly polished glassmorphism-styled components out of the box.
+- 🎨 **Rich Component Library:** Browse and use 26+ prebuilt, highly polished glassmorphism-styled components out of the box.
 - 💳 **Integrated Monetisation:** Secure, frictionless AI credit purchasing via **Razorpay** integration.
 - 🔐 **Authentication:** Google OAuth via **Firebase** paired with secure JWT-based, HTTP-only cookies.
 - 📦 **One-Click npm Publishing:** Admin dashboard with an automated pipeline to build (`tsup`) and publish directly to the npm registry.
@@ -60,7 +60,7 @@ Users can effortlessly describe their desired UI in plain English, and VyronAI i
 * **Database:** MongoDB, Mongoose 9
 * **Authentication:** Firebase (Client), JWT + HTTP-Only Cookies (Server)
 * **Payments:** Razorpay Node SDK
-* **AI Provider:** OpenRouter API (DeepSeek V3 Model)
+* **AI Provider:** OpenRouter API (GPT-4o Mini Model)
 
 ### **Component Library (`vyron-ui-lib`)**
 * **Bundler:** `tsup` (Dual CJS/ESM bundling)
@@ -71,8 +71,8 @@ Users can effortlessly describe their desired UI in plain English, and VyronAI i
 ## 🏗️ Project Architecture & Flow
 
 1. **User Authentication:** Client uses Firebase Google OAuth to get a provider token -> sends to Node backend `/api/auth/googlesignup` -> Backend verifies and issues a secure HTTP-Only JWT.
-2. **AI Generation Flow:** User inputs a prompt -> Frontend deducts 50 local credits (optimistic UI) -> Sends request to `/api/component/generate` -> Backend validates JWT, deducts credits from DB, calls OpenRouter (DeepSeek V3) enforcing JSON output -> Backend returns raw React JSX code to the frontend -> Frontend renders it safely via `react-live`.
-3. **Admin Publish Pipeline:** Admin clicks "Publish" -> Backend creates `.jsx` file in `vyron-ui-lib` -> Updates `index.js` -> Runs `npm run build` -> Increments package version -> Executes `npm publish` synchronously to the global registry.
+2. **AI Generation Flow:** User inputs a prompt -> Frontend deducts 50 local credits (optimistic UI) -> Sends request to `/api/component/generate` -> Backend validates JWT, deducts credits from DB, calls OpenRouter (GPT-4o Mini) enforcing JSON output -> Backend returns raw React JSX code to the frontend -> Frontend renders it safely via `react-live`.
+3. **Admin Publish Pipeline:** Admin clicks "Publish" -> Backend creates `.jsx` file in `vyron-ui-lib` -> Updates `index.js` -> Runs `npm run build` -> Increments package version (`npm version patch`) -> Executes `npm publish` with an automation token.
 
 ---
 
@@ -223,15 +223,11 @@ CLIENT_URL=http://localhost:5173
 
 ---
 
-## 🚨 Bug Detection & Known Issues
-
-> [!WARNING]
-> **Action Required to Run the App Seamlessly**
-
-1. **`framer-motion` Dependency Conflict:** `package.json` specifies `"motion": "^12.35.2"`, but source files import from `"framer-motion"`. **Fix:** Ensure you run `npm install framer-motion` inside `vyron-ui-client`.
-2. **Missing `.env` Credentials:** Authentication will silently fail without a valid `VITE_FIREBASE_APIKEY`. The server will crash or fail API calls without valid MongoDB, OpenRouter, and Razorpay keys. 
-3. **NPM Library Naming Inconsistency:** The client package JSON points to `vyron-ui-library-ai` but the project specs sometimes refer to `vyron-ui-lib`. Standardise the npm registry name to avoid missing dependency errors.
-4. **Synchronous Publishing:** The admin publish pipeline currently runs synchronously on the Node.js main thread (`execSync`). **Fix:** This should be moved to an asynchronous job queue (like BullMQ or Agenda) to prevent HTTP request timeouts during the build/publish phase.
+> [!TIP]
+> **Project Standards**
+> 1. **NPM Library:** The library is published as `vyron-ui-library-ai`.
+> 2. **Authentication:** Ensure `VITE_FIREBASE_APIKEY` is set in the client `.env`.
+> 3. **Publishing:** The admin dashboard handles automatic version bumping and building before publishing.
 
 ---
 

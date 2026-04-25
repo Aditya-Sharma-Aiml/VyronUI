@@ -6,7 +6,7 @@ import {
   TbLayoutSidebarLeftExpand, TbX, TbMenu2
 } from "react-icons/tb";
 import { HiSparkles } from "react-icons/hi2";
-import { SiValorant } from "react-icons/si";
+import {} from "react-icons/si";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LiveComponentPreview from "../components/LiveComponentPreview";
@@ -320,13 +320,13 @@ export default function MyComponentsPage() {
           className="flex items-center gap-2 sm:gap-2.5 bg-transparent border-none cursor-pointer"
         >
           <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-br from-[#3be8ff] to-[#0ab5d4] flex items-center justify-center shadow-[0_0_14px_rgba(59,232,255,0.35)]">
-            <SiValorant size={13} color="#051c20" />
+            <span style={{ color: '#051c20', fontSize: '14px', fontWeight: '900', lineHeight: 1, fontFamily: "'Syne', sans-serif" }}>V</span>
           </div>
           <span
             className="text-sm sm:text-base font-bold text-white"
             style={{ fontFamily: "'Syne',sans-serif" }}
           >
-            VyronAI
+            VyronUI
           </span>
         </button>
 
