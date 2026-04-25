@@ -63,3 +63,5 @@ export { LoginPage } from "./components/LoginPage/LoginPage.jsx";
 export { Dropdown } from "./components/Dropdown/Dropdown.jsx";
 
 export { DateFilter } from "./components/DateFilter/DateFilter.jsx";
+
+export { PaymentCard } from "./components/PaymentCard/PaymentCard.jsx";
