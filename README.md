@@ -30,8 +30,6 @@ Users can effortlessly describe their desired UI in plain English, and VyronAI i
 | ![Landing Page](screenshots/landing.png) | ![Generator](screenshots/generator-preview.png) |
 | **Component Library** | **Pricing Plans** |
 | ![Components](screenshots/components-library.png) | ![Pricing](screenshots/pricing.png) |
-| **AI Generation Process** | |
-| ![Generating](screenshots/generator-generating.png) | |
 
 ---
 
