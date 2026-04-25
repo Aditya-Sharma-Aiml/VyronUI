@@ -25,12 +25,13 @@ Users can effortlessly describe their desired UI in plain English, and VyronAI i
 
 ### 📸 Preview / Screenshots
 
-*(Placeholders - replace with actual paths to your screenshots)*
-| **Landing Page** | **AI Generator Sandbox** |
+| **Landing Page** | **Component Generator** |
 | :---: | :---: |
-| ![Landing Page](https://via.placeholder.com/600x350/030b0d/3be8ff?text=VyronAI+Landing+Page) | ![Generator](https://via.placeholder.com/600x350/0a1a1e/0ab5d4?text=AI+Component+Generator) |
-| **Component Library** | **Admin Dashboard** |
-| ![Components](https://via.placeholder.com/600x350/041e24/3be8ff?text=Prebuilt+Components) | ![Dashboard](https://via.placeholder.com/600x350/030b0d/0ab5d4?text=Admin+Dashboard) |
+| ![Landing Page](screenshots/landing.png) | ![Generator](screenshots/generator-preview.png) |
+| **Component Library** | **Pricing Plans** |
+| ![Components](screenshots/components-library.png) | ![Pricing](screenshots/pricing.png) |
+| **AI Generation Process** | |
+| ![Generating](screenshots/generator-generating.png) | |
 
 ---
 
