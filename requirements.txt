@@ -1,0 +1,312 @@
+
+================================================================================
+                        VYRONAI — PROJECT REQUIREMENTS
+               Full-Stack AI-Powered React UI Component Platform
+================================================================================
+
+PROJECT OVERVIEW
+----------------
+VyronAI is a full-stack SaaS web platform that lets users:
+  1. Browse and use a prebuilt React UI component library (vyron-ui-library on npm)
+  2. Generate custom React UI components using AI (DeepSeek via OpenRouter)
+  3. Preview, customize, and save those components
+  4. Purchase AI credits via Razorpay
+  5. (Admin) Publish components to the npm library with one click
+
+The project is divided into 3 sub-packages:
+  - vyron-ui-client   → React frontend (Vite + TailwindCSS v4)
+  - vyron-ui-server   → Node.js/Express backend API
+  - vyron-ui-lib      → Publishable npm component library (tsup build)
+
+
+================================================================================
+1. RUNTIME REQUIREMENTS
+================================================================================
+
+  Node.js        >= 18.x (ESM support required, "type": "module" in server)
+  npm            >= 9.x
+  MongoDB        >= 6.x (cloud Atlas or local instance)
+
+
+================================================================================
+2. CLIENT — vyron-ui-client
+================================================================================
+
+  Framework      : React 19 (with Vite 7)
+  Language       : JavaScript (JSX)
+  Styling        : TailwindCSS v4 (@tailwindcss/vite plugin)
+  Build Tool     : Vite 7
+
+  --- Runtime Dependencies ---
+
+  react                         ^19.2.0    — Core React library
+  react-dom                     ^19.2.0    — React DOM renderer
+  react-router-dom              ^7.13.1    — Client-side routing (BrowserRouter)
+  react-redux                   ^9.2.0     — Redux state binding
+  @reduxjs/toolkit              ^2.11.2    — Redux store + slices (userSlice)
+  axios                         ^1.13.6    — HTTP client for API calls
+  framer-motion                 (install)  — Animations (motion, AnimatePresence)
+                                             NOTE: package.json has "motion" ^12.35.2
+                                             but all imports use "framer-motion".
+                                             Run: npm install framer-motion
+  motion                        ^12.35.2   — (currently installed, conflicts with above)
+  firebase                      ^12.10.0   — Google OAuth via Firebase Auth
+  react-icons                   ^5.6.0     — Icon sets (tb, hi2, si, fc)
+  react-live                    ^4.1.8     — Live JSX preview sandbox
+  @codesandbox/sandpack-react   ^2.20.0    — In-browser code sandbox (component preview)
+  recharts                      ^3.8.0     — Charts for admin dashboard
+  tailwindcss                   ^4.2.1     — Utility CSS framework
+  @tailwindcss/vite             ^4.2.1     — Vite plugin for TailwindCSS v4
+
+  --- Dev Dependencies ---
+
+  vite                          ^7.3.1     — Build tool & dev server
+  @vitejs/plugin-react          ^5.1.1     — React Fast Refresh for Vite
+  eslint                        ^9.39.1    — Linter
+  eslint-plugin-react-hooks     ^7.0.1     — React hooks linting rules
+  eslint-plugin-react-refresh   ^0.4.24    — React refresh linting
+  @eslint/js                    ^9.39.1    — ESLint JS config
+  globals                       ^16.5.0    — Global browser/node definitions
+  @types/react                  ^19.2.7    — TypeScript types (used for IDE support)
+  @types/react-dom              ^19.2.3    — TypeScript types for react-dom
+
+  --- Environment Variables (.env) ---
+
+  VITE_FIREBASE_APIKEY          = <Firebase Web API Key>
+  VITE_RAZORPAY_KEY_ID          = <Razorpay publishable key>
+
+  --- Pages / Routes ---
+
+  /                             → Home.jsx          (Landing page)
+  /component                    → Componentspage.jsx (Browse prebuilt components)
+  /generate                     → ComponentGenerator.jsx (AI generator, auth required)
+  /pricing                      → Pricingpage.jsx   (Buy AI credits via Razorpay)
+  /my-components                → MyComponentsPage.jsx (User's saved components)
+  /admin                        → AdminDashboard.jsx (Admin only — publish to npm)
+
+  --- Redux Store ---
+
+  userSlice (store.js)
+    state.user.userData          — Logged-in user object (name, email, role, aiCredits)
+    state.user.allUsers          — All users list (admin only)
+    state.user.allComponents     — All components list
+
+  --- Key Features ---
+
+  - Google OAuth login via Firebase (signInWithPopup → backend /api/auth/googlesignup)
+  - JWT auth via httpOnly cookies (withCredentials: true on all axios calls)
+  - AI component generation: describe UI in English → get React JSX
+  - Live component preview using react-live sandbox
+  - Prop customization panel (generated components have editable props)
+  - Save generated components to user's account
+  - Razorpay payment integration to buy AI credits
+  - Admin dashboard: view all users + components, publish to npm
+
+
+================================================================================
+3. SERVER — vyron-ui-server
+================================================================================
+
+  Framework      : Express 5
+  Language       : JavaScript ESM ("type": "module")
+  Database       : MongoDB via Mongoose 9
+  Auth           : JWT (jsonwebtoken) + httpOnly cookies
+  AI             : OpenRouter API → DeepSeek V3 (deepseek/deepseek-chat)
+  Payments       : Razorpay
+
+  --- Dependencies ---
+
+  express                       ^5.2.1     — HTTP server framework
+  mongoose                      ^9.2.4     — MongoDB ODM
+  dotenv                        ^17.3.1    — Environment variable loader
+  cors                          ^2.8.6     — CORS (origin: http://localhost:5173)
+  cookie-parser                 ^1.4.7     — Parse httpOnly JWT cookies
+  jsonwebtoken                  ^9.0.3     — JWT sign + verify
+  bcryptjs                      ^3.0.3     — Password hashing (future use)
+  axios                         ^1.13.6    — HTTP client (OpenRouter API calls)
+  crypto                        ^1.0.1     — HMAC signature for Razorpay verification
+  razorpay                      ^2.9.6     — Razorpay Node SDK
+  nodemon                       ^3.1.14    — Dev auto-restart
+
+  --- Environment Variables (.env) ---
+
+  PORT                          = 8000
+  MONGODB_URL                   = <MongoDB connection string>
+  JWT_SECRET                    = <JWT signing secret>
+  OPENROUTER_API_KEY            = <OpenRouter API key>
+  RAZORPAY_KEY_ID               = <Razorpay Key ID>
+  RAZORPAY_KEY_SECRET           = <Razorpay Key Secret>
+
+  --- API Routes ---
+
+  POST  /api/auth/googlesignup       — Firebase token → create/login user, set JWT cookie
+  GET   /api/auth/logout             — Clear JWT cookie
+
+  GET   /api/user/currentuser        — Get logged-in user data (isAuth)
+  GET   /api/user/all-users          — Get all users (isAuth)
+
+  POST  /api/component/generate      — AI component generation (isAuth, costs 50 credits)
+  POST  /api/component/save          — Save component to DB (isAuth)
+  POST  /api/component/publish       — Publish component to npm (isAuth, admin only)
+  GET   /api/component/all-components — Get all components (isAuth)
+
+  POST  /api/payment/create-order    — Create Razorpay order (isAuth)
+  POST  /api/payment/verify          — Verify payment + add credits (isAuth)
+
+  --- Data Models ---
+
+  User
+    name          String (required)
+    email         String (required, unique)
+    role          String enum ["user", "admin"] (default: "user")
+    aiCredits     Number (default: 150)
+
+  Component
+    name          String
+    code          String (full JSX code)
+    props         [String] (customizable prop names)
+    owner         ObjectId → User
+    visibility    String enum ["private", "public"] (default: "private")
+    npmPackage    String (set to "vyron-ui-lib" on publish)
+
+  Payment
+    userId        ObjectId → User (required)
+    amount        Number (INR)
+    aiCredits     Number (credits being purchased)
+    razorpayOrderId   String
+    razorpayPaymentId String
+    status        String enum ["created", "paid", "failed"] (default: "created")
+
+  --- Middleware ---
+
+  isAuth.js      — Verifies JWT from cookie → sets req.userId
+
+  --- AI Integration ---
+
+  Provider       : OpenRouter (https://openrouter.ai/api/v1/chat/completions)
+  Model          : deepseek/deepseek-chat (DeepSeek V3)
+  Temperature    : 0.7
+  Max Tokens     : 2000
+  Response Format: { type: "json_object" } (enforced JSON output)
+  Credit Cost    : 50 credits per generation (admin generates free)
+
+  --- Publish Pipeline (Admin only) ---
+
+  When admin publishes a component:
+    1. Write JSX file to vyron-ui-lib/src/components/<Name>/<Name>.jsx
+    2. Append export to vyron-ui-lib/src/index.js
+    3. Delete old dist/ folder
+    4. Run: npm run build (tsup)
+    5. Run: npm version patch
+    6. Run: npm publish --access public
+    7. Update component.visibility = "public" in DB
+
+
+================================================================================
+4. UI LIBRARY — vyron-ui-lib
+================================================================================
+
+  Package Name   : vyron-ui-library (published to npm)
+  Build Tool     : tsup
+  Output         : dist/index.js (CJS) + dist/index.mjs (ESM)
+  Peer Deps      : react >= 18
+
+  --- Dev Dependencies ---
+
+  tsup                          ^8.5.1     — Dual CJS/ESM bundler
+  typescript                    ^5.9.3     — TypeScript (for tsup)
+
+  --- Exported Components (25 total) ---
+
+  Loader, NotificationToast, AvatarCard, PricingCard, Navbar, Footer,
+  Sidebar, Charts, ImageCard, ImageSlider, BackgoundImageSlider,
+  PageLoader, OTPInput, InvoiceCard, FileUpload, ColorPicker,
+  RatingStars, StatCard, ProgressBar, EcommerceCard, AnimatedForm,
+  ReviewCard, Card, Button, AnimatedButton
+
+  --- Component Rules (AI-generated components follow these) ---
+
+  - Named export only: export const ComponentName = ({ ...props }) => {}
+  - Inline styles ONLY (no TailwindCSS, no CSS classes)
+  - All props have default values
+  - No external dependencies (only React + hooks)
+  - No position: fixed (breaks live preview sandbox)
+  - Dark background by default (#0f172a, #020617, #0d1117)
+  - Rich accent colors: #6366f1, #7c3aed, #059669, #e11d48, #0ea5e9
+
+
+================================================================================
+5. DESIGN SYSTEM
+================================================================================
+
+  Brand Colors
+    Primary Cyan     #3be8ff   — Main accent (buttons, glows, borders)
+    Cyan Dark        #0ab5d4   — Gradient endpoint
+    Background       #030b0d   — Page background
+    Surface          #0a1a1e   — Card/panel background
+    Surface Light    #041e24   — Secondary panels
+
+  Typography
+    Headings    : Syne (Google Fonts) — weights 600, 700, 800
+    Body        : DM Sans (Google Fonts) — weights 300, 400, 500, 600
+    Mono/Code   : system monospace
+
+  Design Language
+    - Dark glassmorphism aesthetic
+    - Radial gradient glows on hero sections
+    - Dot-grid background pattern
+    - Framer Motion animations (fade-up, scale, AnimatePresence)
+    - Sticky glassmorphic navbar (backdrop-blur)
+    - Border radius: 12px–20px cards, 8px–10px buttons
+    - Subtle borders: rgba(255,255,255,0.05–0.10)
+
+
+================================================================================
+6. DEV SETUP COMMANDS
+================================================================================
+
+  # Install all dependencies
+  cd vyron-ui-client  && npm install && npm install framer-motion
+  cd vyron-ui-server  && npm install
+  cd vyron-ui-lib     && npm install
+
+  # Start development
+  cd vyron-ui-client  && npm run dev       # → http://localhost:5173
+  cd vyron-ui-server  && npm run dev       # → http://localhost:8000
+
+  # Build & publish library
+  cd vyron-ui-lib && npm run build && npm publish
+
+  # Install published library in client
+  cd vyron-ui-client && npm i vyron-ui-library
+
+
+================================================================================
+7. KNOWN ISSUES / NOTES
+================================================================================
+
+  1. CRITICAL — framer-motion missing:
+     package.json has "motion" ^12.35.2 but all source files import from
+     "framer-motion". Run: npm install framer-motion in vyron-ui-client.
+
+  2. Firebase API Key empty:
+     .env has VITE_FIREBASE_APIKEY= (empty). Fill in Firebase console
+     project key or Google OAuth login will silently fail.
+
+  3. All .env files are empty/placeholder:
+     server/.env: MONGODB_URL, JWT_SECRET, OPENROUTER_API_KEY,
+     RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET all need real values.
+     client/.env: VITE_FIREBASE_APIKEY, VITE_RAZORPAY_KEY_ID need real values.
+
+  4. npm library name mismatch:
+     Package is published as "vyron-ui-library" but some UI text says
+     "npm install vyron-ui-lib". Standardize to "vyron-ui-library".
+
+  5. Server CORS is hardcoded:
+     origin: "http://localhost:5173" — update for production deployment.
+
+  6. Publish pipeline runs synchronously on the HTTP thread (execSync):
+     Heavy operation — may timeout in production. Consider async job queue.
+
+
+================================================================================
