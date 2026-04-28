@@ -93,3 +93,5 @@ export { SkeletonLoader } from "./components/SkeletonLoader/SkeletonLoader.jsx";
 export { AudioPlayer } from "./components/AudioPlayer/AudioPlayer.jsx";
 
 export { ChatBubble } from "./components/ChatBubble/ChatBubble.jsx";
+
+export { DarkLightToggle } from "./components/DarkLightToggle/DarkLightToggle.jsx";
