@@ -1,272 +1,419 @@
 <div align="center">
 
-# 🚀 VyronUI: Full-Stack AI-Powered React UI Component Platform
-**Generate, Preview, Customize, and Publish React UI Components with the Power of GPT-4o Mini.**
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:042f1e,50:0a5c38,100:1a7a50&height=200&section=header&text=VyronUI&fontSize=90&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=AI-Powered%20React%20UI%20Component%20Platform&descAlignY=58&descSize=20&descColor=6ee7b7"/>
 
-[![React](https://img.shields.io/badge/React-19.2.0-blue.svg?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-7.3.1-646CFF.svg?style=for-the-badge&logo=vite)](https://vitejs.dev/)
-[![Node.js](https://img.shields.io/badge/Node.js-18.x-339933.svg?style=for-the-badge&logo=node.js)](https://nodejs.org/)
-[![Express](https://img.shields.io/badge/Express-5.2.1-000000.svg?style=for-the-badge&logo=express)](https://expressjs.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-9.2.4-47A248.svg?style=for-the-badge&logo=mongodb)](https://mongodb.com/)
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC.svg?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg?style=for-the-badge)](#license)
+</div>
 
-[**Live Demo (Coming Soon)**](#) • [**Report Bug**](#bug-detection--known-issues) • [**Request Feature**](#future-improvements)
+<div align="center">
+
+<br/>
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=6EE7B7&center=true&vCenter=true&width=600&lines=Describe+it.+Generate+it.+Ship+it.;AI-Powered+JSX+in+Seconds.;50+%2B+Glassmorphism+Components.;Built+for+the+Modern+React+Developer.)](https://git.io/typing-svg)
+
+<br/>
+
+<p>
+  <a href="#"><img src="https://img.shields.io/badge/🌐%20Live%20Demo-Visit%20VyronUI-6ee7b7?style=for-the-badge&labelColor=042f1e" alt="Live Demo"/></a>
+  &nbsp;
+  <a href="https://npmjs.com/package/vyron-ui-library-ai"><img src="https://img.shields.io/badge/📦%20npm-vyron--ui--library--ai-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm"/></a>
+  &nbsp;
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/React-19.2.0-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Vite-7.3.1-646CFF?style=flat-square&logo=vite&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Node.js-18.x-339933?style=flat-square&logo=node.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Express-5.2.1-000000?style=flat-square&logo=express&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MongoDB-9.2.4-47A248?style=flat-square&logo=mongodb&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TailwindCSS-v4-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GPT--4o%20Mini-OpenRouter-412991?style=flat-square&logo=openai&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Razorpay-Integrated-02042B?style=flat-square&logo=razorpay&logoColor=white"/>
+</p>
+
+<br/>
+
+> ***VyronUI** transforms how developers build UI — describe any component in plain English, and our GPT-4o Mini engine generates production-ready, interactive JSX in seconds. Preview it live, customize it, save it, and ship it.*
+
+<br/>
+
+[🌐 Live Demo](comming soon) · [📦 npm Package](https://npmjs.com/package/vyron-ui-library-ai)
+
+</div>
+
+<br/>
+
+---
+
+## ⚡ Stats at a Glance
+
+<div align="center">
+
+| 🤖 AI Engine | 🧩 Components | 💳 Payment | 🔐 Auth | ⚡ Build Tool |
+|:---:|:---:|:---:|:---:|:---:|
+| GPT-4o Mini | **26+** Prebuilt | Razorpay | JWT + Cookies | Vite 7 |
 
 </div>
 
 ---
 
-## 💡 About The Project
+## 🧭 How It Works
 
-VyronUI is a comprehensive, full-stack SaaS platform designed to revolutionize how developers build UI. It combines a robust pre-built React component library (`vyron-ui-library-ai` on npm) with a powerful AI generator powered by GPT-4o Mini via OpenRouter. 
-
-Users can effortlessly describe their desired UI in plain English, and VyronUI instantly generates production-ready, interactive JSX components. These components can be previewed live, customized, saved, and seamlessly integrated into any React project.
-
-### 📸 Preview / Screenshots
-
-| **Landing Page** | **Component Generator** |
-| :---: | :---: |
-| ![Landing Page](screenshots/landing.png) | ![Generator](screenshots/generator-preview.png) |
-| **Component Library** | **Pricing Plans** |
-| ![Components](screenshots/components-library.png) | ![Pricing](screenshots/pricing.png) |
+```
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║    📝 You type a         🤖 GPT-4o Mini        ⚡ Sandpack renders       ║
+║    plain English   ──►   generates clean   ──►  it live in the          ║
+║    description           JSX instantly          browser                 ║
+║                                                                          ║
+║    🚀 One-click copy     🎨 Tweak &             💾 Save to your          ║
+║    into your project ◄── fine-tune        ◄──   personal library        ║
+║                          as needed                                       ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
+```
 
 ---
 
 ## ✨ Core Features
 
-- 🤖 **AI-Powered Generation:** Turn plain English prompts into functional React JSX components using GPT-4o Mini.
-- ⚡ **Live Interactive Preview:** Real-time sandboxed execution and preview using `react-live` and `@codesandbox/sandpack-react`.
-- 🎨 **Rich Component Library:** Browse and use 26+ prebuilt, highly polished glassmorphism-styled components out of the box.
-- 💳 **Integrated Monetisation:** Secure, frictionless AI credit purchasing via **Razorpay** integration.
-- 🔐 **Authentication:** Google OAuth via **Firebase** paired with secure JWT-based, HTTP-only cookies.
-- 📦 **One-Click npm Publishing:** Admin dashboard with an automated pipeline to build (`tsup`) and publish directly to the npm registry.
-- 🌓 **Premium UI/UX:** Dark glassmorphism aesthetic, radial gradient glows, and fluid `framer-motion` animations.
+<table>
+<tr>
+<td valign="top" width="50%">
+
+### 🤖 &nbsp;AI Component Generation
+> *From English to JSX in under 3 seconds*
+
+- Powered by **GPT-4o Mini** via OpenRouter
+- Generates clean, semantic, production JSX
+- Context-aware multi-component layouts
+- Smart prop inference & type handling
+
+</td>
+<td valign="top" width="50%">
+
+### ⚡ &nbsp;Live Sandboxed Preview
+> *See it render before you ship it*
+
+- Real-time execution via **`react-live`**
+- Full sandbox via **`@codesandbox/sandpack`**
+- Instant hot-reload on every keystroke
+- Zero-config, zero-risk isolated runtime
+
+</td>
+</tr>
+<tr>
+<td valign="top" width="50%">
+
+### 🎨 &nbsp;26+ Glassmorphism Components
+> *A complete design system, npm-ready*
+
+- Buttons, Cards, Modals, Forms, Tables...
+- Cohesive glassmorphism visual language
+- Tailwind v4 utility-styled throughout
+- `npm install vyron-ui-library-ai`
+
+</td>
+<td valign="top" width="50%">
+
+### 💳 &nbsp;Credit-Based Monetization
+> *Fair usage, frictionless checkout*
+
+- **Razorpay** payment gateway baked in
+- Per-generation credit deduction
+- Real-time balance on the dashboard
+- Full transaction history & receipts
+
+</td>
+</tr>
+<tr>
+<td valign="top" width="50%">
+
+### 🔐 &nbsp;Enterprise-Grade Auth
+> *Secure by default, always*
+
+- Stateless **JWT** authentication
+- **httpOnly cookie** session management
+- Protected routes on frontend & backend
+- Auto session refresh & persistence
+
+</td>
+<td valign="top" width="50%">
+
+### 👤 &nbsp;Personal Component Workspace
+> *Your UI library, your way*
+
+- Save & organise all generated components
+- Full generation history with timestamps
+- Credit balance & purchase logs
+- One-click clipboard copy
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🛠️ Tech Stack
+## 💻 Tech Stack
 
-### **Frontend (`vyron-ui-client`)**
-* **Core:** React 19, Vite 7
-* **Styling:** TailwindCSS v4
-* **State Management:** Redux Toolkit (`@reduxjs/toolkit`)
-* **Routing:** React Router v7
-* **Animations:** Framer Motion
-* **Utilities:** Axios, React Icons, Recharts
+<div align="center">
 
-### **Backend (`vyron-ui-server`)**
-* **Core:** Node.js (>=18), Express.js v5 (ESM)
-* **Database:** MongoDB, Mongoose 9
-* **Authentication:** Firebase (Client), JWT + HTTP-Only Cookies (Server)
-* **Payments:** Razorpay Node SDK
-* **AI Provider:** OpenRouter API (GPT-4o Mini Model)
+### Frontend
 
-### **Component Library (`vyron-ui-lib`)**
-* **Bundler:** `tsup` (Dual CJS/ESM bundling)
-* **Type System:** TypeScript
+| | Technology | Version | Purpose |
+|:---:|---|:---:|---|
+| ⚛️ | **React.js** | 19.2.0 | Core UI framework |
+| ⚡ | **Vite** | 7.3.1 | Build tool & dev server |
+| 🎨 | **TailwindCSS** | v4 | Utility-first styling |
+| 🎭 | **Framer Motion** | latest | Animations & transitions |
+| 🗃️ | **Redux Toolkit** | latest | Global state management |
+| 🔗 | **React Router DOM** | latest | Client-side routing |
+| 🖥️ | **react-live** | latest | Live component execution |
+| 📦 | **Sandpack React** | latest | Sandboxed code preview |
+
+### Backend
+
+| | Technology | Version | Purpose |
+|:---:|---|:---:|---|
+| 🟢 | **Node.js** | 18.x | JavaScript runtime |
+| 🚂 | **Express.js** | 5.2.1 | REST API server |
+| 🍃 | **MongoDB + Mongoose** | 9.2.4 | Database & ODM |
+| 🤖 | **OpenRouter API** | — | GPT-4o Mini access |
+| 💰 | **Razorpay SDK** | latest | Payment processing |
+| 🔐 | **JWT** | latest | Auth tokens |
+| 🍪 | **Cookie-Parser** | latest | Secure cookies |
+
+</div>
 
 ---
 
-## 🏗️ Project Architecture & Flow
+## 🏗️ Architecture
 
-1. **User Authentication:** Client uses Firebase Google OAuth to get a provider token -> sends to Node backend `/api/auth/googlesignup` -> Backend verifies and issues a secure HTTP-Only JWT.
-2. **AI Generation Flow:** User inputs a prompt -> Frontend deducts 50 local credits (optimistic UI) -> Sends request to `/api/component/generate` -> Backend validates JWT, deducts credits from DB, calls OpenRouter (GPT-4o Mini) enforcing JSON output -> Backend returns raw React JSX code to the frontend -> Frontend renders it safely via `react-live`.
-3. **Admin Publish Pipeline:** Admin clicks "Publish" -> Backend creates `.jsx` file in `vyron-ui-lib` -> Updates `index.js` -> Runs `npm run build` -> Increments package version (`npm version patch`) -> Executes `npm publish` with an automation token.
-
----
-
-## 📂 Folder Structure
-
-```text
-d:\VyronUI\vyron-ui\
-├── vyron-ui-client/          # React Vite Frontend Application
-│   ├── src/                  # Components, Pages, Redux store, utils
-│   ├── public/               # Static assets
-│   ├── package.json          # Client dependencies
-│   ├── vite.config.js        # Vite & Tailwind configuration
-│   └── eslint.config.js      # Linting rules
+```
+VyronUI/
 │
-├── vyron-ui-server/          # Node.js Express Backend
-│   ├── configs/              # DB connection & external service config
-│   ├── controllers/          # Business logic (Auth, Component, Payment)
-│   ├── middlewares/          # isAuth.js (JWT validation)
-│   ├── models/               # Mongoose schemas (User, Component, Payment)
-│   ├── routes/               # Express routing
-│   ├── utils/                # Helper functions
-│   └── index.js              # Server entry point
+├── 📁 client/                          # ⚛️  React 19 + Vite Frontend
+│   └── src/
+│       ├── 🧩 components/
+│       │   ├── ui/                     # Core design-system primitives
+│       │   ├── generator/              # AI generation UI & controls
+│       │   ├── preview/                # Sandpack live preview wrapper
+│       │   └── shared/                 # Navbar, Footer, Layout shells
+│       ├── 📄 pages/                   # Route-level views
+│       │   ├── Home.jsx                # Landing + hero
+│       │   ├── Generator.jsx           # Main AI generator page
+│       │   ├── Library.jsx             # Browse 26+ components
+│       │   ├── Dashboard.jsx           # User workspace
+│       │   └── Pricing.jsx             # Plans + Razorpay checkout
+│       ├── 🗃️  store/                  # Redux Toolkit slices
+│       ├── 🌐 services/                # Axios API call abstractions
+│       ├── 🔗 hooks/                   # Custom React hooks
+│       └── 🎨 assets/                  # Fonts, images, icons
 │
-├── vyron-ui-lib/             # Publishable NPM Component Library
-│   ├── src/                  # Core React components (25+ items)
-│   ├── dist/                 # tsup build output (CJS & ESM)
-│   ├── tsup.config.js        # Bundler configuration
-│   └── package.json          # Library dependencies
+├── 📁 server/                          # 🟢 Node.js + Express Backend
+│   ├── 🔌 routes/
+│   │   ├── auth.routes.js              # /api/auth/*
+│   │   ├── generate.routes.js          # /api/generate/*
+│   │   ├── component.routes.js         # /api/components/*
+│   │   └── payment.routes.js           # /api/payments/*
+│   ├── 🎮 controllers/                 # Business logic per route
+│   ├── 🗄️  models/                     # Mongoose schemas
+│   │   ├── User.model.js
+│   │   ├── Component.model.js
+│   │   └── Transaction.model.js
+│   ├── 🛡️  middleware/                 # Auth guard, error handler
+│   ├── 🤖 services/                    # OpenRouter & Razorpay wrappers
+│   └── server.js                       # Express entry point
 │
-└── requirements.txt          # Master project specification
+├── 📁 vyron-ui-library-ai/             # 📦 Published npm package
+│   ├── src/components/                 # 26+ glassmorphism components
+│   └── package.json
+│
+└── .env.example                        # Template for all env vars
 ```
 
 ---
 
-## 🚀 Installation & Setup
+## ⚙️ Getting Started
 
-Follow these steps to set up the project locally.
+### Prerequisites
 
-**Prerequisites:** Node.js >= 18.x, MongoDB >= 6.x
-
-### 1. Clone & Install Dependencies
 ```bash
-# Clone the repository
-git clone <your-repo-url>
-cd VyronUI/vyron-ui
-
-# Install Client Dependencies
-cd vyron-ui-client
-npm install
-npm install framer-motion # Fixes known dependency issue
-
-# Install Server Dependencies
-cd ../vyron-ui-server
-npm install
-
-# Install Library Dependencies
-cd ../vyron-ui-lib
-npm install
+node  >= 18.0.0
+npm   >= 9.0.0
 ```
 
-### 2. Configure Environment Variables
-You need to populate `.env` files in both the client and server directories. Refer to the [Environment Variables](#-environment-variables) section below.
+You'll also need accounts for:
+- 🍃 [MongoDB Atlas](https://mongodb.com/atlas) (free tier works)
+- 🤖 [OpenRouter](https://openrouter.ai/keys) (GPT-4o Mini API key)
+- 💳 [Razorpay](https://dashboard.razorpay.com) (test keys are fine)
 
-### 3. Start Development Servers
+---
 
-Open two terminals:
+### 🚀 Installation
 
-**Terminal 1 (Backend):**
+**① Clone the repo**
 ```bash
-cd vyron-ui-server
-npm run dev
-# Runs on http://localhost:8000
+git clone https://github.com/your-username/vyronui.git
+cd vyronui
 ```
 
-**Terminal 2 (Frontend):**
+**② Set up environment variables**
 ```bash
-cd vyron-ui-client
-npm run dev
-# Runs on http://localhost:5173
+cp .env.example server/.env
+# Open server/.env and fill in your keys
+```
+
+**③ Start the backend**
+```bash
+cd server && npm install && npm run dev
+# ✅ API live at http://localhost:5000
+```
+
+**④ Start the frontend**
+```bash
+cd client && npm install && npm run dev
+# ✅ App live at http://localhost:5173
+```
+
+**⑤ (Optional) Install the npm package standalone**
+```bash
+npm install vyron-ui-library-ai
 ```
 
 ---
 
 ## 🔐 Environment Variables
 
-Create a `.env` file in the respective directories.
-
-**`vyron-ui-client/.env`**
 ```env
-VITE_FIREBASE_APIKEY=your_firebase_web_api_key
-VITE_RAZORPAY_KEY_ID=your_razorpay_publishable_key
-```
+# ┌─────────────────────────────────────────────┐
+# │              server/.env                    │
+# └─────────────────────────────────────────────┘
 
-**`vyron-ui-server/.env`**
-```env
-PORT=8000
-MONGODB_URL=mongodb+srv://<user>:<password>@cluster.mongodb.net/vyron-ui
-JWT_SECRET=your_super_secret_jwt_key
-OPENROUTER_API_KEY=sk-or-v1-your_openrouter_api_key
-RAZORPAY_KEY_ID=rzp_test_your_razorpay_key_id
+# Server
+PORT=5000
+NODE_ENV=development
+
+# Database
+MONGODB_URI=mongodb+srv://<user>:<pass>@cluster.mongodb.net/vyronui
+
+# Auth
+JWT_SECRET=your_super_secret_jwt_key_min_32_chars
+JWT_EXPIRES_IN=7d
+COOKIE_SECRET=your_cookie_signing_secret
+
+# AI Engine
+OPENROUTER_API_KEY=sk-or-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+OPENROUTER_MODEL=openai/gpt-4o-mini
+
+# Payments
+RAZORPAY_KEY_ID=rzp_test_xxxxxxxxxxxx
 RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+
+# CORS
 CLIENT_URL=http://localhost:5173
 ```
 
 ---
 
-## 📖 Usage Guide
+## 🔌 API Reference
 
-1. **Sign Up/Login:** Click the login button to authenticate via Google.
-2. **Browse Components:** Navigate to `/component` to view the prebuilt library items.
-3. **Generate UI:** Go to `/generate`. Enter a prompt (e.g., "Create a dark-themed pricing card with a cyan glow"). It costs 50 credits.
-4. **Preview & Edit:** Use the live editor sandbox to tweak the generated JSX code or modify props.
-5. **Buy Credits:** Go to `/pricing` to purchase more AI credits securely via Razorpay.
-6. *(Admin Only)* **Publish:** Head to `/admin` to view user stats or push saved components directly to the public `vyron-ui-library-ai` npm registry.
+<details>
+<summary><b>🔐 Auth &nbsp;—&nbsp; <code>/api/auth</code></b></summary>
 
----
+<br/>
 
-## 📡 API Endpoints
+| Method | Endpoint | 🔒 Auth | Description |
+|--------|----------|:---:|-------------|
+| `POST` | `/register` | ❌ | Create new account |
+| `POST` | `/login` | ❌ | Login & receive JWT cookie |
+| `POST` | `/logout` | ✅ | Clear session |
+| `GET`  | `/me` | ✅ | Get current user profile |
 
-| Method | Endpoint | Description | Auth Required |
-| :--- | :--- | :--- | :---: |
-| **POST** | `/api/auth/googlesignup` | Handles Firebase token, creates user, sets JWT cookie | ❌ |
-| **GET** | `/api/auth/logout` | Clears JWT authentication cookie | ❌ |
-| **GET** | `/api/user/currentuser` | Retrieves current logged-in user profile | ✅ |
-| **POST** | `/api/component/generate`| Triggers DeepSeek AI to generate a component (-50 credits) | ✅ |
-| **POST** | `/api/component/save` | Saves a component to the user's database | ✅ |
-| **POST** | `/api/component/publish` | Builds and publishes component to npm (Admin Only) | ✅ |
-| **POST** | `/api/payment/create-order`| Initializes a Razorpay order | ✅ |
-| **POST** | `/api/payment/verify` | Verifies Razorpay signature and adds AI credits | ✅ |
+</details>
 
----
+<details>
+<summary><b>🤖 AI Generation &nbsp;—&nbsp; <code>/api/generate</code></b></summary>
 
-## 🗄️ Database Schema
+<br/>
 
-### `User` Collection
-- `name` (String, Required)
-- `email` (String, Required, Unique)
-- `role` (String, Enum: `["user", "admin"]`, Default: `"user"`)
-- `aiCredits` (Number, Default: `150`)
+| Method | Endpoint | 🔒 Auth | Description |
+|--------|----------|:---:|-------------|
+| `POST` | `/component` | ✅ | Generate JSX from prompt · costs 1 credit |
+| `GET`  | `/history` | ✅ | Fetch generation history |
+| `DELETE` | `/:id` | ✅ | Remove a saved generation |
 
-### `Component` Collection
-- `name` (String)
-- `code` (String, Full React JSX Code)
-- `props` ([String], Customizable prop names)
-- `owner` (ObjectId -> Ref: User)
-- `visibility` (String, Enum: `["private", "public"]`, Default: `"private"`)
-- `npmPackage` (String, set to `"vyron-ui-library"` upon publish)
+</details>
 
----
+<details>
+<summary><b>📚 Component Library &nbsp;—&nbsp; <code>/api/components</code></b></summary>
 
-> [!TIP]
-> **Project Standards**
-> 1. **NPM Library:** The library is published as `vyron-ui-library-ai`.
-> 2. **Authentication:** Ensure `VITE_FIREBASE_APIKEY` is set in the client `.env`.
-> 3. **Publishing:** The admin dashboard handles automatic version bumping and building before publishing.
+<br/>
 
----
+| Method | Endpoint | 🔒 Auth | Description |
+|--------|----------|:---:|-------------|
+| `GET`  | `/` | ❌ | List all public components |
+| `GET`  | `/:id` | ❌ | Get single component detail |
+| `POST` | `/save` | ✅ | Save generated component |
 
-## 🧗 Challenges Faced & Solutions
+</details>
 
-* **Challenge:** Executing AI-generated React code safely in the browser.
-  * **Solution:** Implemented `@codesandbox/sandpack-react` and `react-live` to create secure, isolated browser environments that compile JSX on the fly without crashing the main application.
-* **Challenge:** Ensuring the AI strictly outputs usable code without conversational filler.
-  * **Solution:** Configured the OpenRouter API call to force `{ type: "json_object" }` responses and crafted a highly specific system prompt enforcing standalone, inline-styled React components.
+<details>
+<summary><b>💳 Payments &nbsp;—&nbsp; <code>/api/payments</code></b></summary>
+
+<br/>
+
+| Method | Endpoint | 🔒 Auth | Description |
+|--------|----------|:---:|-------------|
+| `POST` | `/order` | ✅ | Create Razorpay order |
+| `POST` | `/verify` | ✅ | Verify payment & top up credits |
+| `GET`  | `/transactions` | ✅ | Fetch transaction history |
+
+</details>
 
 ---
 
-## 🔮 Future Improvements
+## 🛣️ Roadmap
 
-- [ ] **Async Build Pipeline:** Offload the npm `tsup` build and publish commands to a background worker to prevent server blocking.
-- [ ] **Component Versioning:** Allow users to revert to previous versions of their AI-generated components.
-- [ ] **Tailwind Support in AI:** Train/prompt the AI to generate components using Tailwind utility classes alongside inline styles.
-- [ ] **Export to CodeSandbox/StackBlitz:** Add a 1-click button to export generated components directly to external IDEs.
+```
+2025 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2026
+  │                                                       │
+  ●  AI JSX generation (GPT-4o Mini)       ✅ SHIPPED     │
+  ●  Live sandboxed preview                ✅ SHIPPED     │
+  ●  26+ glassmorphism components          ✅ SHIPPED     │
+  ●  Razorpay credit system               ✅ SHIPPED      │
+  ●  JWT auth + protected routes          ✅ SHIPPED      │
+  ●  npm package published                ✅ SHIPPED      │
+                                                          │
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+<div align="center">
+
+<br/>
+
+## 👨‍💻 Built by
+
+**Aditya Sharma** — building the future of frontend, one prompt at a time.
+
+<br/>
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github)](https://github.com/Aditya-Sharma-Aiml)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](linkedin.com/in/aditya-sharma-aiml/)
+[![npm](https://img.shields.io/badge/npm%20Package-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://npmjs.com/package/vyron-ui-library-ai)
+
+<br/>
+
+*Powered by* &nbsp; [OpenRouter](https://openrouter.ai) &nbsp;·&nbsp; [Sandpack](https://sandpack.codesandbox.io) &nbsp;·&nbsp; [Razorpay](https://razorpay.com) &nbsp;·&nbsp; [Vercel](https://vercel.com)
+
+<br/>
 
 ---
 
-## 🤝 Contribution Guide
+### ⭐ Star this repo if VyronUI saved you hours of UI work!
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+*"The best UI is the one you didn't have to write yourself."*
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
 
----
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:042f1e,50:0a5c38,100:1a7a50&height=100&section=footer"/>
 
-## 📄 License
-
-Distributed under the ISC License. See `LICENSE` for more information.
-
----
-
-## 👨‍💻 Author
-
-**Aditya**  
-*Full-Stack Engineer*
+</div>
