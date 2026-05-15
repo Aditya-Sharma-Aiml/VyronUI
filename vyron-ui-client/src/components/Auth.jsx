@@ -6,56 +6,97 @@ import { TbCopy, TbSettings, TbDownload, TbLogin2, TbX } from "react-icons/tb";
 import {} from "react-icons/si";
 import { auth, provider } from "../utils/firebase";
 import { signInWithPopup } from "firebase/auth";
-import axios from "axios"
+import axios from "axios";
 import { ServerUrl } from "../config";
 import { useDispatch } from "react-redux";
 import { setUserData } from "../redux/userSlice";
 
 const steps = [
-  { icon: TbLogin2,   title: "Login with Google",   desc: "Secure OAuth to unlock all AI tools instantly." },
-  { icon: HiSparkles, title: "Get 150 AI Credits",      desc: "Free credits to generate premium UI components." },
-  { icon: TbSettings, title: "Customize Props",     desc: "Fine-tune and preview every change live." },
-  { icon: TbCopy,     title: "Generate Components", desc: "AI builds production-ready JSX components." },
-  { icon: TbDownload, title: "Copy or Save",        desc: "Export clean code straight into your project." },
+  {
+    icon: TbLogin2,
+    title: "Login with Google",
+    desc: "Secure OAuth to unlock all AI tools instantly.",
+  },
+  {
+    icon: HiSparkles,
+    title: "Get 150 AI Credits",
+    desc: "Free credits to generate premium UI components.",
+  },
+  {
+    icon: TbSettings,
+    title: "Customize Props",
+    desc: "Fine-tune and preview every change live.",
+  },
+  {
+    icon: TbCopy,
+    title: "Generate Components",
+    desc: "AI builds production-ready JSX components.",
+  },
+  {
+    icon: TbDownload,
+    title: "Copy or Save",
+    desc: "Export clean code straight into your project.",
+  },
 ];
 
 function Auth({ onClose }) {
   const [active, setActive] = useState(0);
   const [loginError, setLoginError] = useState("");
   const [isLoggingIn, setIsLoggingIn] = useState(false);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const id = setInterval(() => setActive(s => (s + 1) % steps.length), 2400);
+    const id = setInterval(
+      () => setActive((s) => (s + 1) % steps.length),
+      2400,
+    );
     return () => clearInterval(id);
   }, []);
 
+  const handleGoogleLogin = async () => {
+    try {
+      setLoginError("");
+      setIsLoggingIn(true);
+      console.log("Starting Google login...");
+      console.log("Server URL:", ServerUrl);
 
-   const handleGoogleLogin = async () => {
-     try {
-        setLoginError("");
-        setIsLoggingIn(true);
-        const response = await signInWithPopup(auth , provider)
-        let User = response.user
-        const idToken = await User.getIdToken()
-        const result = await axios.post(ServerUrl+ "/api/auth/googlesignup" , {
+      const response = await signInWithPopup(auth, provider);
+      let User = response.user;
+      console.log("Firebase login successful:", User.email);
+
+      const idToken = await User.getIdToken();
+      console.log("ID Token obtained, calling backend...");
+
+      const result = await axios.post(
+        ServerUrl + "/api/auth/googlesignup",
+        {
           idToken,
-          firebaseApiKey: import.meta.env.VITE_FIREBASE_APIKEY
-        }, {withCredentials:true})
-        dispatch(setUserData(result.data))
-        onClose()
-      
-        
-        
+          firebaseApiKey: import.meta.env.VITE_FIREBASE_APIKEY,
+        },
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+      console.log("Backend response:", result.data);
+      dispatch(setUserData(result.data));
+      onClose();
     } catch (error) {
-        dispatch(setUserData(null))
-        setLoginError(error.response?.data?.message || error.message || "Login failed")
-        console.error("Login error:", error)
+      console.error("Complete error object:", error);
+      console.error("Error response:", error.response);
+      console.error("Error message:", error.message);
+
+      dispatch(setUserData(null));
+      setLoginError(
+        error.response?.data?.message ||
+          error.message ||
+          "Login failed. Check console for details.",
+      );
     } finally {
-        setIsLoggingIn(false);
+      setIsLoggingIn(false);
     }
-  
-    
   };
 
   return (
@@ -87,31 +128,66 @@ function Auth({ onClose }) {
 
           {/* Logo */}
           <motion.div
-            initial={{ opacity: 0, x: -14 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}
+            initial={{ opacity: 0, x: -14 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
             className="flex items-center gap-3 mb-7 sm:mb-9"
           >
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#3be8ff] to-[#0ab5d4] flex items-center justify-center shadow-[0_0_18px_rgba(59,232,255,0.35)]">
-              <span style={{ color: '#051c20', fontSize: '18px', fontWeight: '900', lineHeight: 1, fontFamily: "'Syne', sans-serif" }}>V</span>
+              <span
+                style={{
+                  color: "#051c20",
+                  fontSize: "18px",
+                  fontWeight: "900",
+                  lineHeight: 1,
+                  fontFamily: "'Syne', sans-serif",
+                }}
+              >
+                V
+              </span>
             </div>
-            <span className="text-xl font-bold text-[#e8f8fa] tracking-tight" style={{ fontFamily:"'Syne',sans-serif" }}>VyronUI</span>
+            <span
+              className="text-xl font-bold text-[#e8f8fa] tracking-tight"
+              style={{ fontFamily: "'Syne',sans-serif" }}
+            >
+              VyronUI
+            </span>
           </motion.div>
 
-          <p className="text-[10px] font-semibold tracking-[3px] text-[#3be8ff] uppercase mb-4 sm:mb-5">How it works</p>
+          <p className="text-[10px] font-semibold tracking-[3px] text-[#3be8ff] uppercase mb-4 sm:mb-5">
+            How it works
+          </p>
 
           {/* Steps — horizontal scroll on mobile, vertical on sm+ */}
           <div className="flex sm:flex-col gap-2 sm:gap-1 overflow-x-auto sm:overflow-x-visible pb-2 sm:pb-0 -mx-1 px-1">
             {steps.map(({ icon: Icon, title, desc }, i) => (
-              <motion.div key={i}
-                initial={{ opacity: 0, x: -18 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 + i * 0.07 }}
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -18 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 + i * 0.07 }}
                 className={`flex-shrink-0 sm:flex-shrink flex items-start gap-3 px-3 py-2.5 rounded-xl border transition-all duration-300 min-w-[200px] sm:min-w-0 ${active === i ? "bg-[#3be8ff]/[0.07] border-[#3be8ff]/20" : "bg-transparent border-transparent"}`}
               >
-                <div className={`min-w-[28px] h-7 rounded-lg flex items-center justify-center border transition-all duration-300 ${active === i ? "bg-gradient-to-br from-[#3be8ff] to-[#0ab8d6] border-transparent" : "bg-[#3be8ff]/[0.08] border-[#3be8ff]/20"}`}>
-                  <Icon size={13} color={active === i ? "#051c20" : "#3be8ff"} />
+                <div
+                  className={`min-w-[28px] h-7 rounded-lg flex items-center justify-center border transition-all duration-300 ${active === i ? "bg-gradient-to-br from-[#3be8ff] to-[#0ab8d6] border-transparent" : "bg-[#3be8ff]/[0.08] border-[#3be8ff]/20"}`}
+                >
+                  <Icon
+                    size={13}
+                    color={active === i ? "#051c20" : "#3be8ff"}
+                  />
                 </div>
                 <div>
-                  <p className={`text-[12.5px] font-semibold transition-colors duration-300 whitespace-nowrap sm:whitespace-normal ${active === i ? "text-[#d4f5fa]" : "text-white/55"}`}>{title}</p>
-                  <div className={`overflow-hidden transition-all duration-500 ${active === i ? "max-h-8 opacity-100 mt-0.5" : "max-h-0 opacity-0"}`}>
-                    <p className="text-[11px] text-[#3be8ff]/40 leading-relaxed">{desc}</p>
+                  <p
+                    className={`text-[12.5px] font-semibold transition-colors duration-300 whitespace-nowrap sm:whitespace-normal ${active === i ? "text-[#d4f5fa]" : "text-white/55"}`}
+                  >
+                    {title}
+                  </p>
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ${active === i ? "max-h-8 opacity-100 mt-0.5" : "max-h-0 opacity-0"}`}
+                  >
+                    <p className="text-[11px] text-[#3be8ff]/40 leading-relaxed">
+                      {desc}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -121,7 +197,9 @@ function Auth({ onClose }) {
 
         {/* ── RIGHT ── */}
         <motion.div
-          initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25, duration: 0.5 }}
+          initial={{ opacity: 0, x: 24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.25, duration: 0.5 }}
           className="sm:w-[48%] bg-[#040f12] px-6 sm:px-10 py-8 sm:py-12 flex flex-col justify-center items-center relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-[linear-gradient(rgba(59,232,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(59,232,255,0.025)_1px,transparent_1px)] bg-[size:32px_32px]" />
@@ -129,13 +207,27 @@ function Auth({ onClose }) {
           <div className="relative z-10 w-full max-w-[280px] sm:max-w-[260px] text-center mx-auto">
             {/* Floating icon */}
             <motion.div
-              animate={{ y: [0, -6, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mx-auto mb-5 sm:mb-6 bg-gradient-to-br from-[#3be8ff]/15 to-[#040f12] border border-[#3be8ff]/20 flex items-center justify-center"
             >
-              <span style={{ color: '#3be8ff', fontSize: '24px', fontWeight: '900', lineHeight: 1, fontFamily: "'Syne', sans-serif" }}>V</span>
+              <span
+                style={{
+                  color: "#3be8ff",
+                  fontSize: "24px",
+                  fontWeight: "900",
+                  lineHeight: 1,
+                  fontFamily: "'Syne', sans-serif",
+                }}
+              >
+                V
+              </span>
             </motion.div>
 
-            <h3 className="text-xl font-bold text-[#e4f6f8] tracking-tight mb-2" style={{ fontFamily:"'Syne',sans-serif" }}>
+            <h3
+              className="text-xl font-bold text-[#e4f6f8] tracking-tight mb-2"
+              style={{ fontFamily: "'Syne',sans-serif" }}
+            >
               Welcome back
             </h3>
             <p className="text-[13px] text-[#96bec8]/55 leading-relaxed mb-6 sm:mb-7">
@@ -144,22 +236,30 @@ function Auth({ onClose }) {
 
             {/* Stats */}
             <div className="flex justify-center gap-4 sm:gap-5 mb-6 sm:mb-7">
-              {[["150","Tokens"],["∞","Components"],["JSX","Ready"]].map(([v, l], i) => (
+              {[
+                ["150", "Tokens"],
+                ["∞", "Components"],
+                ["JSX", "Ready"],
+              ].map(([v, l], i) => (
                 <div key={i} className="text-center">
                   <div className="text-base font-bold text-[#3be8ff]">{v}</div>
-                  <div className="text-[9px] text-[#78aab4]/45 uppercase tracking-wider font-medium">{l}</div>
+                  <div className="text-[9px] text-[#78aab4]/45 uppercase tracking-wider font-medium">
+                    {l}
+                  </div>
                 </div>
               ))}
             </div>
 
             {/* Google button */}
             <motion.button
-            onClick={handleGoogleLogin}
+              onClick={handleGoogleLogin}
               disabled={isLoggingIn}
-              whileHover={{ y: -2, scale: 1.02 }} whileTap={{ scale: 0.98 }}
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               className="w-full flex items-center justify-center gap-2.5 py-3.5 rounded-xl bg-white text-[#0a1a1d] font-semibold text-sm cursor-pointer border-none shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_40px_rgba(59,232,255,0.2)] transition-shadow disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <FcGoogle size={19} /> {isLoggingIn ? "Signing in..." : "Continue with Google"}
+              <FcGoogle size={19} />{" "}
+              {isLoggingIn ? "Signing in..." : "Continue with Google"}
             </motion.button>
 
             {loginError && (
@@ -176,7 +276,6 @@ function Auth({ onClose }) {
             </p>
           </div>
         </motion.div>
-
       </motion.div>
     </motion.div>
   );

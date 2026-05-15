@@ -63,8 +63,12 @@ export const googleSignup = async (req, res) => {
     res.cookie("token", token, authCookieOptions);
     return res.status(200).json(user);
   } catch (error) {
-    console.log(error);
-    return res.status(500).json({ message: `googleSignup  ${error}` });
+    console.error("GoogleSignup Error:", error.message);
+    console.error("Full Error:", error);
+    return res.status(500).json({
+      message: `Authentication failed: ${error.message}`,
+      error: process.env.NODE_ENV === "production" ? undefined : error.message,
+    });
   }
 };
 

@@ -13,20 +13,24 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "http://127.0.0.1:5173",
-  process.env.CLIENT_URL
+  "https://vyronui-aditya.onrender.com",
+  process.env.CLIENT_URL,
 ].filter(Boolean);
 
 app.use(
   cors({
     origin(origin, callback) {
+      // Allow requests without origin (like mobile apps or server-to-server)
       if (!origin || allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
-
+      console.log("CORS blocked origin:", origin);
       return callback(new Error(`CORS blocked origin: ${origin}`));
     },
     credentials: true,
-  })
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }),
 );
 
 app.use(express.json());
