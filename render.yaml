@@ -1,0 +1,40 @@
+services:
+  # Backend API Server
+  - type: web
+    name: vyron-ui-backend
+    root: vyron-ui-server
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URL
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLIENT_URL
+        value: https://your-frontend-url.onrender.com
+    maxInstances: 1
+
+  # Frontend Static Site
+  - type: web
+    name: vyron-ui-frontend
+    root: vyron-ui-client
+    runtime: static
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_SERVER_URL
+        value: https://vyron-ui-backend.onrender.com
+      - key: VITE_FIREBASE_APIKEY
+        sync: false
+      - key: VITE_RAZORPAY_KEY_ID
+        sync: false
