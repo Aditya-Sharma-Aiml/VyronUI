@@ -1,8 +1,8 @@
-
 # Vyron UI
 
 A modern and customizable **React UI Component Library** designed for fast development and clean design systems.
 
+🌐 **[Live Demo](https://vyronui-aditya.onrender.com)** · 📦 **[npm Package](https://npmjs.com/package/vyron-ui-library-ai)**
 
 ## 🚀 Usage
 
@@ -13,8 +13,8 @@ import {
   AvatarCard,
   PricingCard,
   Loader,
-  OTPInput
-} from "vyron-ui-library-ai"
+  OTPInput,
+} from "vyron-ui-library-ai";
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
         <Loader />
       </div>
     </>
-  )
+  );
 }
 ```
 
@@ -39,23 +39,23 @@ function App() {
 
 Vyron UI includes the following components:
 
-* AvatarCard
-* BackgroundImageSlider
-* Charts
-* ColorPicker
-* FileUpload
-* Footer
-* ImageCard
-* ImageSlider
-* InvoiceCard
-* Loader
-* Navbar
-* NotificationToast
-* OTPInput
-* PageLoader
-* PricingCard
-* RatingStars
-* Sidebar
+- AvatarCard
+- BackgroundImageSlider
+- Charts
+- ColorPicker
+- FileUpload
+- Footer
+- ImageCard
+- ImageSlider
+- InvoiceCard
+- Loader
+- Navbar
+- NotificationToast
+- OTPInput
+- PageLoader
+- PricingCard
+- RatingStars
+- Sidebar
 
 ---
 
@@ -327,9 +327,9 @@ Vyron UI includes the following components:
 
 Contributions are welcome!
 
-* Fork the repo
-* Create a new branch
-* Submit a pull request
+- Fork the repo
+- Create a new branch
+- Submit a pull request
 
 ---
 
@@ -341,10 +341,10 @@ MIT License
 
 # 💡 Future Improvements
 
-* Theme system (dark/light mode)
-* Animation presets
-* Accessibility improvements
-* More enterprise components
+- Theme system (dark/light mode)
+- Animation presets
+- Accessibility improvements
+- More enterprise components
 
 ---
 
