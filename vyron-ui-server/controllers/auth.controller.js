@@ -3,10 +3,11 @@ import User from "../models/user.model.js"
 import axios from "axios"
 
 const authCookieOptions = {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-    maxAge: 7 * 24 * 60 * 60 * 1000
+    httpOnly: false,  // Allow JavaScript to access cookie
+    secure: true,  // HTTPS only
+    sameSite: "none",  // Allow cross-site requests
+    maxAge: 7 * 24 * 60 * 60 * 1000,  // 7 days
+    domain: undefined  // Allow cross-domain on production
 }
 
 
