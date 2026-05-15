@@ -32,11 +32,11 @@
 
 <br/>
 
-> ***VyronUI** transforms how developers build UI — describe any component in plain English, and our GPT-4o Mini engine generates production-ready, interactive JSX in seconds. Preview it live, customize it, save it, and ship it.*
+> **\*VyronUI** transforms how developers build UI — describe any component in plain English, and our GPT-4o Mini engine generates production-ready, interactive JSX in seconds. Preview it live, customize it, save it, and ship it.\*
 
 <br/>
 
-[🌐 Live Demo](comming soon) · [📦 npm Package](https://npmjs.com/package/vyron-ui-library-ai)
+[🌐 Live Demo](https://vyronui-aditya.onrender.com) · [📦 npm Package](https://npmjs.com/package/vyron-ui-library-ai)
 
 </div>
 
@@ -48,9 +48,9 @@
 
 <div align="center">
 
-| 🤖 AI Engine | 🧩 Components | 💳 Payment | 🔐 Auth | ⚡ Build Tool |
-|:---:|:---:|:---:|:---:|:---:|
-| GPT-4o Mini | **26+** Prebuilt | Razorpay | JWT + Cookies | Vite 7 |
+| 🤖 AI Engine |  🧩 Components   | 💳 Payment |    🔐 Auth    | ⚡ Build Tool |
+| :----------: | :--------------: | :--------: | :-----------: | :-----------: |
+| GPT-4o Mini  | **26+** Prebuilt |  Razorpay  | JWT + Cookies |    Vite 7     |
 
 </div>
 
@@ -81,7 +81,8 @@
 <td valign="top" width="50%">
 
 ### 🤖 &nbsp;AI Component Generation
-> *From English to JSX in under 3 seconds*
+
+> _From English to JSX in under 3 seconds_
 
 - Powered by **GPT-4o Mini** via OpenRouter
 - Generates clean, semantic, production JSX
@@ -92,7 +93,8 @@
 <td valign="top" width="50%">
 
 ### ⚡ &nbsp;Live Sandboxed Preview
-> *See it render before you ship it*
+
+> _See it render before you ship it_
 
 - Real-time execution via **`react-live`**
 - Full sandbox via **`@codesandbox/sandpack`**
@@ -105,7 +107,8 @@
 <td valign="top" width="50%">
 
 ### 🎨 &nbsp;26+ Glassmorphism Components
-> *A complete design system, npm-ready*
+
+> _A complete design system, npm-ready_
 
 - Buttons, Cards, Modals, Forms, Tables...
 - Cohesive glassmorphism visual language
@@ -116,7 +119,8 @@
 <td valign="top" width="50%">
 
 ### 💳 &nbsp;Credit-Based Monetization
-> *Fair usage, frictionless checkout*
+
+> _Fair usage, frictionless checkout_
 
 - **Razorpay** payment gateway baked in
 - Per-generation credit deduction
@@ -129,7 +133,8 @@
 <td valign="top" width="50%">
 
 ### 🔐 &nbsp;Enterprise-Grade Auth
-> *Secure by default, always*
+
+> _Secure by default, always_
 
 - Stateless **JWT** authentication
 - **httpOnly cookie** session management
@@ -140,7 +145,8 @@
 <td valign="top" width="50%">
 
 ### 👤 &nbsp;Personal Component Workspace
-> *Your UI library, your way*
+
+> _Your UI library, your way_
 
 - Save & organise all generated components
 - Full generation history with timestamps
@@ -159,28 +165,28 @@
 
 ### Frontend
 
-| | Technology | Version | Purpose |
-|:---:|---|:---:|---|
-| ⚛️ | **React.js** | 19.2.0 | Core UI framework |
-| ⚡ | **Vite** | 7.3.1 | Build tool & dev server |
-| 🎨 | **TailwindCSS** | v4 | Utility-first styling |
-| 🎭 | **Framer Motion** | latest | Animations & transitions |
-| 🗃️ | **Redux Toolkit** | latest | Global state management |
-| 🔗 | **React Router DOM** | latest | Client-side routing |
-| 🖥️ | **react-live** | latest | Live component execution |
-| 📦 | **Sandpack React** | latest | Sandboxed code preview |
+|     | Technology           | Version | Purpose                  |
+| :-: | -------------------- | :-----: | ------------------------ |
+| ⚛️  | **React.js**         | 19.2.0  | Core UI framework        |
+| ⚡  | **Vite**             |  7.3.1  | Build tool & dev server  |
+| 🎨  | **TailwindCSS**      |   v4    | Utility-first styling    |
+| 🎭  | **Framer Motion**    | latest  | Animations & transitions |
+| 🗃️  | **Redux Toolkit**    | latest  | Global state management  |
+| 🔗  | **React Router DOM** | latest  | Client-side routing      |
+| 🖥️  | **react-live**       | latest  | Live component execution |
+| 📦  | **Sandpack React**   | latest  | Sandboxed code preview   |
 
 ### Backend
 
-| | Technology | Version | Purpose |
-|:---:|---|:---:|---|
-| 🟢 | **Node.js** | 18.x | JavaScript runtime |
-| 🚂 | **Express.js** | 5.2.1 | REST API server |
-| 🍃 | **MongoDB + Mongoose** | 9.2.4 | Database & ODM |
-| 🤖 | **OpenRouter API** | — | GPT-4o Mini access |
-| 💰 | **Razorpay SDK** | latest | Payment processing |
-| 🔐 | **JWT** | latest | Auth tokens |
-| 🍪 | **Cookie-Parser** | latest | Secure cookies |
+|     | Technology             | Version | Purpose            |
+| :-: | ---------------------- | :-----: | ------------------ |
+| 🟢  | **Node.js**            |  18.x   | JavaScript runtime |
+| 🚂  | **Express.js**         |  5.2.1  | REST API server    |
+| 🍃  | **MongoDB + Mongoose** |  9.2.4  | Database & ODM     |
+| 🤖  | **OpenRouter API**     |    —    | GPT-4o Mini access |
+| 💰  | **Razorpay SDK**       | latest  | Payment processing |
+| 🔐  | **JWT**                | latest  | Auth tokens        |
+| 🍪  | **Cookie-Parser**      | latest  | Secure cookies     |
 
 </div>
 
@@ -243,6 +249,7 @@ npm   >= 9.0.0
 ```
 
 You'll also need accounts for:
+
 - 🍃 [MongoDB Atlas](https://mongodb.com/atlas) (free tier works)
 - 🤖 [OpenRouter](https://openrouter.ai/keys) (GPT-4o Mini API key)
 - 💳 [Razorpay](https://dashboard.razorpay.com) (test keys are fine)
@@ -252,30 +259,35 @@ You'll also need accounts for:
 ### 🚀 Installation
 
 **① Clone the repo**
+
 ```bash
 git clone https://github.com/your-username/vyronui.git
 cd vyronui
 ```
 
 **② Set up environment variables**
+
 ```bash
 cp .env.example server/.env
 # Open server/.env and fill in your keys
 ```
 
 **③ Start the backend**
+
 ```bash
 cd server && npm install && npm run dev
 # ✅ API live at http://localhost:5000
 ```
 
 **④ Start the frontend**
+
 ```bash
 cd client && npm install && npm run dev
 # ✅ App live at http://localhost:5173
 ```
 
 **⑤ (Optional) Install the npm package standalone**
+
 ```bash
 npm install vyron-ui-library-ai
 ```
@@ -322,12 +334,12 @@ CLIENT_URL=http://localhost:5173
 
 <br/>
 
-| Method | Endpoint | 🔒 Auth | Description |
-|--------|----------|:---:|-------------|
-| `POST` | `/register` | ❌ | Create new account |
-| `POST` | `/login` | ❌ | Login & receive JWT cookie |
-| `POST` | `/logout` | ✅ | Clear session |
-| `GET`  | `/me` | ✅ | Get current user profile |
+| Method | Endpoint    | 🔒 Auth | Description                |
+| ------ | ----------- | :-----: | -------------------------- |
+| `POST` | `/register` |   ❌    | Create new account         |
+| `POST` | `/login`    |   ❌    | Login & receive JWT cookie |
+| `POST` | `/logout`   |   ✅    | Clear session              |
+| `GET`  | `/me`       |   ✅    | Get current user profile   |
 
 </details>
 
@@ -336,11 +348,11 @@ CLIENT_URL=http://localhost:5173
 
 <br/>
 
-| Method | Endpoint | 🔒 Auth | Description |
-|--------|----------|:---:|-------------|
-| `POST` | `/component` | ✅ | Generate JSX from prompt · costs 1 credit |
-| `GET`  | `/history` | ✅ | Fetch generation history |
-| `DELETE` | `/:id` | ✅ | Remove a saved generation |
+| Method   | Endpoint     | 🔒 Auth | Description                               |
+| -------- | ------------ | :-----: | ----------------------------------------- |
+| `POST`   | `/component` |   ✅    | Generate JSX from prompt · costs 1 credit |
+| `GET`    | `/history`   |   ✅    | Fetch generation history                  |
+| `DELETE` | `/:id`       |   ✅    | Remove a saved generation                 |
 
 </details>
 
@@ -349,11 +361,11 @@ CLIENT_URL=http://localhost:5173
 
 <br/>
 
-| Method | Endpoint | 🔒 Auth | Description |
-|--------|----------|:---:|-------------|
-| `GET`  | `/` | ❌ | List all public components |
-| `GET`  | `/:id` | ❌ | Get single component detail |
-| `POST` | `/save` | ✅ | Save generated component |
+| Method | Endpoint | 🔒 Auth | Description                 |
+| ------ | -------- | :-----: | --------------------------- |
+| `GET`  | `/`      |   ❌    | List all public components  |
+| `GET`  | `/:id`   |   ❌    | Get single component detail |
+| `POST` | `/save`  |   ✅    | Save generated component    |
 
 </details>
 
@@ -362,11 +374,11 @@ CLIENT_URL=http://localhost:5173
 
 <br/>
 
-| Method | Endpoint | 🔒 Auth | Description |
-|--------|----------|:---:|-------------|
-| `POST` | `/order` | ✅ | Create Razorpay order |
-| `POST` | `/verify` | ✅ | Verify payment & top up credits |
-| `GET`  | `/transactions` | ✅ | Fetch transaction history |
+| Method | Endpoint        | 🔒 Auth | Description                     |
+| ------ | --------------- | :-----: | ------------------------------- |
+| `POST` | `/order`        |   ✅    | Create Razorpay order           |
+| `POST` | `/verify`       |   ✅    | Verify payment & top up credits |
+| `GET`  | `/transactions` |   ✅    | Fetch transaction history       |
 
 </details>
 
@@ -403,7 +415,7 @@ CLIENT_URL=http://localhost:5173
 
 <br/>
 
-*Powered by* &nbsp; [OpenRouter](https://openrouter.ai) &nbsp;·&nbsp; [Sandpack](https://sandpack.codesandbox.io) &nbsp;·&nbsp; [Razorpay](https://razorpay.com) &nbsp;·&nbsp; [Vercel](https://vercel.com)
+_Powered by_ &nbsp; [OpenRouter](https://openrouter.ai) &nbsp;·&nbsp; [Sandpack](https://sandpack.codesandbox.io) &nbsp;·&nbsp; [Razorpay](https://razorpay.com) &nbsp;·&nbsp; [Vercel](https://vercel.com)
 
 <br/>
 
@@ -411,8 +423,7 @@ CLIENT_URL=http://localhost:5173
 
 ### ⭐ Star this repo if VyronUI saved you hours of UI work!
 
-*"The best UI is the one you didn't have to write yourself."*
-
+_"The best UI is the one you didn't have to write yourself."_
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:042f1e,50:0a5c38,100:1a7a50&height=100&section=footer"/>
 
